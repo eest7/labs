@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Brick Smash</title>
+    <script src="https://kit.fontawesome.com/dd809237c0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./css/title.css" />
+    <link rel="stylesheet" href="./css/menu.css" />
+    <link rel="stylesheet" href="./css/opciones.css" />
+    <link rel="stylesheet" href="./css/dialogbox.css">
+    <link rel="stylesheet" href="./css/waitingpag.css">
+    <link rel="stylesheet" href="./css/game.css">
+  </head>
+  <body>
+    <div id="container" class="container">
+      <audio id="audio-menu" autoplay loop>
+          <source src="./audio/menu-music.mp3" type="audio/mp3">
+      </audio>  
+      <audio id="audioHit">
+        <source src="./audio/hit.wav" type="audio/wav">
+      </audio>
+      <div class="logo">
+        <b id="logo">B<span>ri</span>ck S<span>m</span>ash</b>
+      </div>
+      <div id="divMenu" class="menu">
+        <div class="balls">
+          <div id="ball1" class="hidden"><img src="./images/ball.png" alt="ball" class="ballMenu"></img></div>
+          <div id="ball2" class="hidden"><img src="./images/ball.png" alt="ball" class="ballMenu"></img></div>
+        </div>	
+        <div class="botones">			
+          <div id="start" class="botonMenu"><p id="textStart">COMENZAR</p></div>
+          <div id="opciones" class="botonMenu"><p id="textOptions">OPCIONES</p></div>
+        </div>
+      </div>
+      <div id="divOpciones" class="divOpciones noDisplay">
+        <div id="textInfo" data-title="Opciones" class="dialog-box_info">
+          <div class="volume">
+            <i id="volumeOff" class="volume-no-select fas fa-volume-mute"></i>
+            <i id="volumeOn" class="volume-select fas fa-volume-up"></i>
+          </div>
+          <div class="idioma">
+            <p id="textIdioma">Idioma:</p>
+            <div class="select">
+              <select id="select">
+                <option id="textEspañol" value="1">Español</option>
+                <option id="textIngles" value="2">Inglés</option>
+              </select>
+            </div>
+          </div>
+          <div id="volver" class="botonVolver"><p id="textVolver">VOLVER</p></div>
+        </div>
+      </div>
+      <div id="game-container" class="game-container" style="display: none;">
+        <div id="aviso" class="aviso">
+          <div class="grid-big">
+            <div class="cell-1"></div>
+            <div class="cell-1"></div>
+            <div class="cell-1"></div>
+            <div class="cell-1"></div>
+            <div class="cell-1"></div>
+            <div class="cell-1"></div>
+            <div class="cell-1"></div>
+            <div class="cell-1"></div>
+            <div class="cell-1"></div>
+            <div class="cell-1"></div>
+            <div class="cell-1"></div>
+            <div class="cell-1"></div>
+            <div class="cell-1"></div>
+            <div class="cell-1"></div>
+            <div class="cell-1"></div>
+            <div class="cell-1"></div>
+            <div class="cell-1"></div>
+            <div class="cell-1"></div>
+            <div class="cell-1"></div>
+            <div class="cell-1"></div>
+            <div class="cell-1"></div>
+            <div class="cell-1"></div>
+            <div class="cell-1"></div>
+            <div class="cell-1"></div>
+            <div class="cell-1"></div>
+          </div>
+          <div data-title="Tips" class="dialog-box_warning">
+            <p id="textTip1">Impide que la pelota o los bloques toquen el suelo.</p>
+            <p id="textTip2">Ataca primero a los bloques de abajo.</p>
+            <p id="textTip3">Trata de dirigir la pelota hacia tus objetivos.</p>
+            <p id="textTip4">Golpea los bloques magentas 2 veces para destruirlos.</p>
+          </div>
+        </div>
+        <div id="game-background" class="game-background"></div>
+        <div class="divScore" id="divScore">
+          <p>SCORE: </p>
+        </div> 
+        <div id="instrucciones" data-title="Intrucciones" class="dialog-box_success" style="display: none; height: 225px;">
+            <p id="textInst1">TOQUE UNA TECLA PARA COMENZAR.</p>
+            <p id="textInst2">TOQUE LAS FLECHAS PARA MOVERSE DE IZQUIERDA A DERECHA.</p>
+            <p id="textInst3">DESTRUYE LOS BLOQUES PARA OBTENER PUNTOS.</p>
+            <p id="textInst4">CADA CIERTO TIEMPO SE AGREGARA UNA NUEVA LINEA DE BLOQUES.</p>
+        </div>
+        <div id="lose-game-pop" data-title="JUEGO TERMINADO" class="dialog-box_success" style="display: none;">
+            <h2>Oops...</h2>
+            <h3 id="textPerder">Perdiste!</h3>
+            <h3 id="textScore">Tu puntuación fue:</h3>
+            <span id="span-score"></span>
+            <div id="lose-game-volver" class="botonVolver"><p>VOLVER</p></div>
+        </div>
+      </div>
+    </div>
+    <script src="./js/jquery.js"></script>
+    <script src="./js/menu_and_options.js"></script>
+    <script src="./js/game.js"></script>
+  </body>
+</html>

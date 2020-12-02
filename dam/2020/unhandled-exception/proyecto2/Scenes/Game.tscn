@@ -1,0 +1,437 @@
+[gd_scene load_steps=29 format=2]
+
+[ext_resource path="res://Objects/Bird.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Sprites/background-day.png" type="Texture" id=2]
+[ext_resource path="res://Objects/Base.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Game.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Fonts/flappy-font.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Objects/Flash.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Sprites/gameover.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Sprites/leaderboard-button.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/Leaderboard.gd" type="Script" id=9]
+[ext_resource path="res://Assets/Sprites/arrow.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Sprites/leaderboard-bg.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Sprites/button.png" type="Texture" id=12]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 168, 8 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 28
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+font_data = ExtResource( 5 )
+
+[sub_resource type="Theme" id=3]
+default_font = SubResource( 2 )
+
+[sub_resource type="ShaderMaterial" id=4]
+
+[sub_resource type="DynamicFont" id=5]
+size = 14
+font_data = ExtResource( 5 )
+
+[sub_resource type="Theme" id=6]
+default_font = SubResource( 5 )
+
+[sub_resource type="Animation" id=7]
+resource_name = "game_over"
+tracks/0/type = "value"
+tracks/0/path = NodePath("TryAgain:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 72, 250 ), Vector2( 72, 200 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Share:rect_position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 72, 290 ), Vector2( 72, 240 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 144, 46 ), Vector2( 144, 96 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:modulate")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Gradient" id=8]
+colors = PoolColorArray( 0.243137, 0.152941, 0.192157, 1, 0.243137, 0.152941, 0.192157, 1 )
+
+[sub_resource type="GradientTexture" id=9]
+gradient = SubResource( 8 )
+
+[sub_resource type="Animation" id=10]
+length = 60.0
+loop = true
+step = 10.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 60 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 144, -256 ), Vector2( 144, 256 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 60 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 144, 256 ), Vector2( 144, 768 ) ]
+}
+
+[sub_resource type="DynamicFont" id=11]
+size = 28
+font_data = ExtResource( 5 )
+
+[sub_resource type="Theme" id=12]
+default_font = SubResource( 11 )
+
+[sub_resource type="DynamicFont" id=13]
+size = 28
+font_data = ExtResource( 5 )
+
+[sub_resource type="Theme" id=14]
+default_font = SubResource( 13 )
+
+[sub_resource type="DynamicFont" id=15]
+size = 14
+font_data = ExtResource( 5 )
+
+[sub_resource type="Theme" id=16]
+default_font = SubResource( 15 )
+
+[node name="Game" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 144, 256 )
+texture = ExtResource( 2 )
+
+[node name="Pipes" type="Node2D" parent="."]
+
+[node name="Base" parent="." instance=ExtResource( 3 )]
+position = Vector2( 0, 400 )
+
+[node name="UpperBarrier" type="StaticBody2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UpperBarrier"]
+position = Vector2( 168, -72 )
+shape = SubResource( 1 )
+
+[node name="Bird" parent="." instance=ExtResource( 1 )]
+position = Vector2( 120, 200 )
+
+[node name="PipeSpawn" type="Timer" parent="."]
+wait_time = 1.5
+
+[node name="GUI" type="Control" parent="."]
+margin_right = 288.0
+margin_bottom = 512.0
+theme = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="Label" parent="GUI"]
+visible = false
+material = SubResource( 4 )
+margin_right = 288.0
+margin_bottom = 128.0
+text = "0 "
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Record" type="Label" parent="GUI"]
+margin_left = 8.0
+margin_right = 240.0
+margin_bottom = 48.0
+text = "RECORD: 10"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LeaderboardButton" type="TextureButton" parent="GUI"]
+margin_left = 248.0
+margin_top = 8.0
+margin_right = 280.0
+margin_bottom = 40.0
+action_mode = 0
+texture_normal = ExtResource( 8 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameOver" type="Control" parent="GUI"]
+visible = false
+margin_top = 56.0
+margin_right = 288.0
+margin_bottom = 312.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="GUI/GameOver"]
+position = Vector2( 144, 96 )
+texture = ExtResource( 7 )
+
+[node name="TryAgain" type="TextureButton" parent="GUI/GameOver"]
+margin_left = 72.0
+margin_top = 200.0
+margin_right = 216.0
+margin_bottom = 231.999
+texture_normal = ExtResource( 12 )
+expand = true
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="GUI/GameOver/TryAgain"]
+margin_right = 144.0
+margin_bottom = 32.0
+theme = SubResource( 6 )
+text = "Reintentar"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="Share" type="TextureButton" parent="GUI/GameOver"]
+margin_left = 72.0
+margin_top = 240.0
+margin_right = 216.0
+margin_bottom = 272.0
+texture_normal = ExtResource( 12 )
+expand = true
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="GUI/GameOver/Share"]
+margin_right = 144.0
+margin_bottom = 32.0
+theme = SubResource( 6 )
+text = "Compartir"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GUI/GameOver"]
+anims/game_over = SubResource( 7 )
+
+[node name="PlayArea" type="TextureButton" parent="GUI"]
+margin_top = 72.0
+margin_right = 288.0
+margin_bottom = 520.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Flash" parent="." instance=ExtResource( 6 )]
+
+[node name="Leaderboard" type="Node2D" parent="."]
+visible = false
+script = ExtResource( 9 )
+
+[node name="HTTPRequest" type="HTTPRequest" parent="Leaderboard"]
+
+[node name="Background" type="Sprite" parent="Leaderboard"]
+scale = Vector2( 1, 1.375 )
+texture = SubResource( 9 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 288, 512 )
+
+[node name="Overlay" type="Node2D" parent="Leaderboard"]
+
+[node name="1" type="Sprite" parent="Leaderboard/Overlay"]
+modulate = Color( 0, 0, 0, 0.156863 )
+position = Vector2( 144, -256 )
+texture = ExtResource( 11 )
+
+[node name="2" type="Sprite" parent="Leaderboard/Overlay"]
+modulate = Color( 0, 0, 0, 0.156863 )
+position = Vector2( 144, 256 )
+texture = ExtResource( 11 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Leaderboard/Overlay"]
+autoplay = "scroll"
+anims/scroll = SubResource( 10 )
+
+[node name="Rank" type="Control" parent="Leaderboard"]
+visible = false
+margin_right = 288.0
+margin_bottom = 512.0
+theme = SubResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CloseButton" type="TextureButton" parent="Leaderboard/Rank"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 48.0
+margin_bottom = 48.0
+texture_normal = ExtResource( 10 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="Leaderboard/Rank"]
+margin_left = 16.0
+margin_right = 272.0
+margin_bottom = 64.0
+text = "TOP 10"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Players" type="Label" parent="Leaderboard/Rank"]
+margin_left = 16.0
+margin_top = 64.0
+margin_right = 152.0
+margin_bottom = 512.0
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Scores" type="Label" parent="Leaderboard/Rank"]
+margin_left = 152.0
+margin_top = 64.0
+margin_right = 272.0
+margin_bottom = 512.0
+align = 2
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Share" type="Control" parent="Leaderboard"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+theme = SubResource( 14 )
+
+[node name="CloseButton" type="TextureButton" parent="Leaderboard/Share"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 48.0
+margin_bottom = 48.0
+texture_normal = ExtResource( 10 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="Leaderboard/Share"]
+margin_left = 16.0
+margin_right = 272.0
+margin_bottom = 64.0
+text = "COMPARTIR"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Placeholder" type="Label" parent="Leaderboard/Share"]
+margin_top = 128.0
+margin_right = 288.0
+margin_bottom = 160.0
+text = "Ingresa tu nombre"
+align = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="LineEdit" parent="Leaderboard/Share"]
+margin_left = 16.0
+margin_top = 160.0
+margin_right = 272.0
+margin_bottom = 198.0
+align = 1
+max_length = 8
+
+[node name="TextureButton" type="TextureButton" parent="Leaderboard/Share"]
+margin_left = 72.0
+margin_top = 288.0
+margin_right = 208.0
+margin_bottom = 320.0
+texture_normal = ExtResource( 12 )
+expand = true
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="Leaderboard/Share/TextureButton"]
+margin_right = 136.0
+margin_bottom = 32.0
+theme = SubResource( 16 )
+text = "PUBLICAR"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="game_over" from="Bird" to="." method="_on_Bird_game_over"]
+[connection signal="point" from="Bird" to="." method="_on_Bird_point"]
+[connection signal="timeout" from="PipeSpawn" to="." method="_on_PipeSpawn_timeout"]
+[connection signal="pressed" from="GUI/LeaderboardButton" to="." method="_on_LeaderboardButton_pressed"]
+[connection signal="pressed" from="GUI/GameOver/TryAgain" to="." method="_on_TryAgain_pressed"]
+[connection signal="pressed" from="GUI/GameOver/Share" to="." method="_on_Share_pressed"]
+[connection signal="pressed" from="GUI/PlayArea" to="." method="_on_PlayArea_pressed"]
+[connection signal="request_completed" from="Leaderboard/HTTPRequest" to="Leaderboard" method="_on_HTTPRequest_request_completed"]
+[connection signal="pressed" from="Leaderboard/Rank/CloseButton" to="Leaderboard" method="_on_CloseButton_pressed"]
+[connection signal="pressed" from="Leaderboard/Share/CloseButton" to="Leaderboard" method="_on_CloseButton_pressed"]
+[connection signal="pressed" from="Leaderboard/Share/TextureButton" to="Leaderboard" method="_on_TextureButton_pressed"]

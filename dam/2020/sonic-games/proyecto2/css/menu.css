@@ -1,0 +1,306 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background: url(../img/fondomenu.gif);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@font-face { 
+	font-family:Ninjastrike; 
+	src: url (NinjaStrike.otf);
+}
+
+.datos{
+	width: 100%;
+	text-align: center;
+	font-family: Ninjastrike;
+	font-size: 30px;
+	margin-top: 80px;
+	-webkit-text-stroke: 2px black;
+	color: white;
+}
+
+.imgdiv{
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+#menu{
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#menu img{
+	margin-top: 25px; 
+	width: 50%;
+	min-width: 400px;
+}
+
+#menu .op{
+	margin-top: 20px;
+	text-align: center;
+}
+
+#menu .op2{
+	margin-top: 20px;
+	text-align: center;
+	width: 100%;
+}
+
+#menu .op3{
+	margin-top: 20px;
+	text-align: center;
+	width: 100%;
+}
+
+#boton1{
+	font-size: 45px;
+	font-family: Ninjastrike;
+	color: white;
+	-webkit-text-stroke: 2px black;
+	margin-bottom: 15px;
+}
+
+#boton2{
+	font-size: 45px;
+	font-family: Ninjastrike;
+	color: white;
+	-webkit-text-stroke: 2px black;
+	margin-bottom: 15px;
+}
+
+#boton3{
+	font-size: 45px;
+	font-family: Ninjastrike;
+	color: white;
+	-webkit-text-stroke: 2px black;
+	margin-bottom: 15px;
+}
+
+.acomodar{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.acomodardivs{
+	width: 700px;
+	display: flex;
+	flex-direction: row;
+	margin: 0 auto;
+}
+
+#boton4{
+	font-size: 35px;
+	font-family: Ninjastrike;
+	color: white;
+	-webkit-text-stroke: 2px black;
+}
+
+#subir{
+	font-size: 40px;
+	font-family: arial black;
+	color: white;
+	-webkit-text-stroke: 3px black;
+	margin-left: 20px;
+}
+
+#bajar{
+	font-size: 40px;
+	font-family: arial black;
+	color: white;
+	-webkit-text-stroke: 3px black;
+	margin-right: 20px;
+}
+
+#subir2{
+	font-size: 40px;
+	font-family: arial black;
+	color: white;
+	-webkit-text-stroke: 3px black;
+	margin-left: 20px;
+}
+
+#bajar2{
+	font-size: 40px;
+	font-family: arial black;
+	color: white;
+	-webkit-text-stroke: 3px black;
+	margin-right: 20px;
+}
+
+#bajar:hover{
+	color: #aeaeae;
+}
+
+#subir:hover{
+	color: #aeaeae;
+}
+
+#bajar2:hover{
+	color: #aeaeae;
+}
+
+#subir2:hover{
+	color: #aeaeae;
+}
+
+.volumen{
+	width: 50%;
+	margin: 0 auto;
+}
+
+.volumen2{
+	width: 50%;
+	margin: 0 auto;
+	margin-right: 30px;
+}
+
+#boton5{
+	font-size: 35px;
+	font-family: Ninjastrike;
+	color: white;
+	-webkit-text-stroke: 2px black;
+}
+
+#volver{
+		text-align: center; 
+		font-family: Ninjastrike; 
+		color: white; 
+		-webkit-text-stroke: 2px black; 
+		font-size: 40px; 
+		width: 150px; 
+		margin: 0 auto;
+}
+
+#volver2{
+		text-align: center; 
+		font-family: Ninjastrike; 
+		color: white; 
+		-webkit-text-stroke: 2px black; 
+		font-size: 40px; 
+		width: 150px; 
+		margin: 0 auto;
+		margin-top: 20px;
+}
+
+@media screen and (max-width: 1244px){
+	#boton1, #boton2, #boton3{
+		font-size: 40px;
+	}
+	#volver, #volver2{
+		font-size: 35px; 
+	}
+	.datos{
+		font-size: 25px;
+	}
+	.idioma{
+		font-size: 23px;
+	}
+}
+
+@media screen and (max-width: 1042px){
+	#boton1, #boton2, #boton3{
+		font-size: 38px;
+	}
+	#boton4{
+	font-size: 30px;
+	}
+	#boton5{
+	font-size: 30px;
+	}
+	#volver, #volver2{
+		font-size: 32px; 
+	}
+	.datos{
+		font-size: 22px;
+	}
+}
+
+@media screen and (max-width: 854px){
+	#boton1, #boton2, #boton3{
+		font-size: 32px;
+	}
+	#boton4{
+	font-size: 25px;
+	}
+	#boton5{
+	font-size: 25px;
+	}
+	#volver, #volver2{
+	font-size: 30px; 
+	}
+	.datos{
+	font-size: 20px;
+	}
+	.acomodardivs{
+	width: 500px;
+	}	
+}
+
+@media screen and (max-height: 620px){
+	.datos{
+		margin-top: 50px;
+	}
+}
+
+@media screen and (max-height: 440px){
+	#menu img{
+	width: 380px;
+	min-width: 0;
+	}
+	#boton1, #boton2, #boton3{
+	font-size: 30px;
+	}
+	#subir{
+	font-size: 35px;
+	}
+	#bajar{
+	font-size: 35px;
+	}
+	#subir2{
+	font-size: 35px;
+	}
+	#bajar2{
+	font-size: 35px;
+	}
+	#volver, #volver2{
+	font-size: 25px; 
+	}
+	.datos{
+	font-size: 20px;
+	margin-top: 30px;
+	}
+}
+
+@media screen and (max-height: 420px){
+	.datos{
+	margin-top: 20px;
+	}
+}
+
+@media screen and (max-height: 400px){
+	#menu img{
+	width: 320px;
+	min-width: 0;
+	}
+	#boton1, #boton2, #boton3{
+	font-size: 28px;
+	}
+	#boton4, #boton5{
+	font-size: 25px;	
+	}
+}

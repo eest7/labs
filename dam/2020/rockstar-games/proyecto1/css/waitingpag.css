@@ -1,0 +1,79 @@
+.aviso {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.grid-big {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 70px;
+  height: 70px;
+}
+.cell-1 {
+  width: 10px;
+  height: 10px;
+  background: #5c002e;
+  border-radius: 50%;
+  margin: 2px;
+  animation: quick-glow 1.25s 0.3s infinite linear;
+}
+.cell-1:nth-child(7) {
+  animation: quick-glow 1.25s 0.15s infinite linear;
+}
+.cell-1:nth-child(8) {
+  animation: quick-glow 1.25s 0.15s infinite linear;
+}
+.cell-1:nth-child(9) {
+  animation: quick-glow 1.25s 0.15s infinite linear;
+}
+.cell-1:nth-child(12) {
+  animation: quick-glow 1.25s 0.15s infinite linear;
+}
+.cell-1:nth-child(14) {
+  animation: quick-glow 1.25s 0.15s infinite linear;
+}
+.cell-1:nth-child(17) {
+  animation: quick-glow 1.25s 0.15s infinite linear;
+}
+.cell-1:nth-child(18) {
+  animation: quick-glow 1.25s 0.15s infinite linear;
+}
+.cell-1:nth-child(19) {
+  animation: quick-glow 1.25s 0.15s infinite linear;
+}
+.cell-1:nth-child(13) {
+  animation: quick-glow 1.25s infinite linear;
+}
+@keyframes quick-glow {
+  15% {
+    z-index: 99;
+    background: #ff2995;
+    box-shadow: 0 0 10px 2px #ff2995;
+  }
+}
+@keyframes glow {
+  50% {
+    z-index: 99;
+    background: #ff2995;
+    box-shadow: 0 0 10px 2px #ff2995;
+  }
+}
+@-webkit-keyframes quick-glow {
+  15% {
+    z-index: 99;
+    background: #ff2995;
+    box-shadow: 0 0 10px 2px #ff2995;
+  }
+}
+@-webkit-keyframes glow {
+  50% {
+    z-index: 99;
+    background: #ff2995;
+    box-shadow: 0 0 10px 2px #ff2995;
+  }
+}

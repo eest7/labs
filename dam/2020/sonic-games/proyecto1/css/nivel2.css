@@ -1,0 +1,86 @@
+*{
+	margin: 0;
+	padding: 0
+}
+.background1{
+	width: 1600px;
+	height: 789px;
+	background: url(../images/1.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.background2{
+	width: 1600px;
+	height: 789px;
+	background: url(../images/green-hill-zone-moviendose.gif);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.personajei{
+ 	width: 230px;
+    height: 174px;
+    background: url(../images/Tails-Preparandose.gif);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+}
+.personajec{
+    width: 202px;
+    height: 154px;
+    background: url(../images/Tails-Corriendo.gif);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+}
+.personajes{
+	width: 142px;
+    height: 142px;
+    background: url(../images/Tails-Saltando.gif);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+}
+.personajep{
+    width: 170px;
+    height: 180px;
+    background: url(../images/Tails-Perdiendo.gif);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+}
+.ring{
+	width: 40px;
+    height: 40px;
+    background: url(../images/ring.gif);
+    background-size: 100%;
+    background-position: center;
+    position: absolute;
+}
+.enemigo1{
+	width: 152px;
+    height: 116px;
+    background: url(../images/Enemigo1.gif);
+    background-size: 100%;
+    background-position: center;
+    position: absolute;
+}
+.enemigo2{
+	width: 152px;
+    height: 100px;
+    background: url(../images/Enemigo2.gif);
+    background-size: 100%;
+    background-position: center;
+    position: absolute;
+}
+.enemigo3{
+	width: 156px;
+    height: 76px;
+    background: url(../images/Enemigo3.gif);
+    background-size: 100%;
+    background-position: center;
+    position: absolute;
+}

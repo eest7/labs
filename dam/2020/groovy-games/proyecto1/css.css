@@ -1,0 +1,58 @@
+body {
+	justify-content: center;
+	display: flex
+}
+
+.fondo {
+	background-image: url("img/back.jpg");
+	width: 728px;
+	height: 410px;
+	display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: flex-start;
+    align-items: center;
+    align-self: center;
+}
+
+.play {
+	height: 80px;
+	width: 250px;
+}
+
+.fondo2 {
+	width: 1024px;
+	height: 610px;
+	display: flex;
+	overflow: hidden;
+	position: relative;
+	background-image: url("img/fondo2.jpg");
+	background-position-y: 610px;
+}
+
+.player,.playerl {
+	max-width: 100%;
+	width: 70px;
+	height: 100px;
+}
+/*musica*/
+.musicbtn{
+	align-self: flex-start;
+    
+}
+#playpausebtn{
+	background: transparent;
+	border: none;
+}
+#mutebtn{
+	background: transparent;
+	border: none;
+}
+#playpausebtn img{
+	width: 50px;
+	height: 50px;
+}
+#mutebtn img{
+	width: 50px;
+	height: 50px;
+}

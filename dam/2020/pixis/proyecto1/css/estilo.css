@@ -1,0 +1,32 @@
+.logo {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.contenedor {
+  display: flex;
+  justify-content: center;
+}
+
+.boton {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+#atras {
+  width: 100px;
+  height: 35px;
+  padding: 5px;
+  font-size: 15px;
+}
+
+html,
+body,
+pre,
+code,
+kbd,
+samp {
+  font-family: "font-family you want to use";
+}

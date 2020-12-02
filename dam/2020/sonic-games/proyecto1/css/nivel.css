@@ -1,0 +1,90 @@
+*{
+	margin: 0;
+	padding: 0
+}
+.background1{
+	width: 1600px;
+	height: 789px;
+	background: url(../images/1.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.background2{
+	width: 1600px;
+	height: 789px;
+	background: url(../images/green-hill-zone-moviendose.gif);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.personajei{
+ 	width: 170px;
+    height: 180px;
+    background: url(../images/Sonic-Preparandose.gif);
+    background-size: 100%;
+    background-position: center;
+    position: absolute;
+}
+.personajec{
+    width: 190px;
+    height: 185px;
+    background: url(../images/Sonic-Corriendo.gif);
+    background-size: 100%;
+    background-position: center;
+    position: absolute;
+}
+.personajes{
+	width: 155px;
+    height: 155px;
+    background: url(../images/Sonic-Salttando.gif);
+    background-size: 100%;
+    background-position: center;
+    position: absolute;
+}
+.personajep{
+    width: 170px;
+    height: 180px;
+    background: url(../images/Sonic-Perdiendo.gif);
+    background-size: 100%;
+    background-position: center;
+    position: absolute;
+}
+.ring{
+	width: 40px;
+    height: 40px;
+    background: url(../images/ring.gif);
+    background-size: 100%;
+    background-position: center;
+    position: absolute;
+}
+.ringdeshacer{
+    width: 40px;
+    height: 40px;
+    background: url(../images/ring-desapareciendo.gif);
+    background-size: 100%;
+    background-position: center;
+    position: absolute;
+}
+.enemigo1{
+	width: 152px;
+    height: 116px;
+    background: url(../images/Enemigo1.gif);
+    background-size: 100%;
+    background-position: center;
+    position: absolute;
+}
+.enemigo2{
+	width: 152px;
+    height: 100px;
+    background: url(../images/Enemigo2.gif);
+    background-size: 100%;
+    background-position: center;
+    position: absolute;
+}
+.enemigo3{
+	width: 156px;
+    height: 76px;
+    background: url(../images/Enemigo3.gif);
+    background-size: 100%;
+    background-position: center;
+    position: absolute;
+}

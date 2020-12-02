@@ -1,0 +1,78 @@
+#canvas {
+  border: 1px solid black;
+  background-color: #1e1e1e;
+  margin-bottom: 25px;
+}
+#frame {
+  margin: 0 auto;
+  width: 400px;
+  height: 570px;
+  margin-top: 100px;
+  background-color: #6977ee;
+  border: #7761b9 5px solid;
+}
+#frame2 {
+  margin: 0 auto;
+  width: 400px;
+  height: 570px;
+  margin-top: 100px;
+  background-color: #6977ee;
+  border: #7761b9 5px solid;
+}
+#frame3 {
+  margin: 0 auto;
+  width: 400px;
+  height: 570px;
+  margin-top: 100px;
+  background-color: #6977ee;
+  border: #7761b9 5px solid;
+}
+
+.game--controlls {
+  width: 100%;
+  height: 40%;
+  background: transparent;
+  position: relative;
+  padding: 0 30px;
+  margin: 0 auto;
+}
+
+.controlls {
+  width: 90px;
+  height: 90px;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 1fr 1fr;
+  transform: rotate(45deg);
+}
+
+.controlls--btn {
+  cursor: pointer;
+  background-color: #fff;
+  border: 2px solid #ccc;
+  border-radius: 100%;
+  color: #000;
+  font-size: 20px;
+  transform: rotate(-45deg);
+}
+#puntosTotal {
+  margin-top: 10px;
+  color: #fff;
+  display: flex;
+  justify-content: space-around;
+
+}
+.puntos{
+  display: inline-flex;
+  margin : 0 auto;
+}
+
+@media screen and (max-width:880px){
+  #frame,#frame2,#frame3{
+  width: 350px;
+  height: 80vh;
+ 
+  margin: 0 auto;
+  margin-top: 10px;
+  }
+}

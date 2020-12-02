@@ -1,0 +1,51 @@
+#menuPrincipal {
+  background-color: #fff;
+  width: 500px;
+  height: 300px;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#menuOpciones {
+  background-color: #fff;
+  width: 500px;
+  height: 450px;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#contenedorRedes {
+  margin: 0 auto;
+  width: 90%;
+  height: 450px;
+  margin-top: 3%;
+}
+@media screen and (max-width:880px){
+
+  #menuPrincipal,#menuOpciones{
+    margin: 0 auto;
+    width: 100vw;
+    height: 90vh;
+  }
+  .nes-btn{
+    margin :0 auto;
+    width: 70%;
+    margin-bottom: 20px;
+  }
+  .realizado{
+    margin: 0 auto;
+    height: 10vh;
+  }
+  h1{
+    font-size: 8vw;
+  }
+  canvas{
+    width:250px;
+    height: 250px;
+  }
+  #frame{
+  width: 280px;
+  height: 300px;
+  } 
+}
+

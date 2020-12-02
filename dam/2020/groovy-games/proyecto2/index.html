@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Spooky Time!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+</head>
+<body>
+    <main class="fondo"id="main">
+        <img src="images/fondo-menu.png" class="fondoimg"id="fondo">
+        <video class="fondoBoost" id="fondoBoost">
+            <source src="images/fondo-boost.mp4"> 
+        </video>
+        <img src="images/logo.png" id="logo"class="logo">
+        <button class="play animate__animated animate__pulse animate__infinite"id="play"></button>
+        <a class="musica"id="btnMusica"></a>
+        <p class="score"id="score">Score: </p>
+        <p class="vida"id="vida">♥: 3 </p>
+        <div class="fondoPerder"id="fondoPerder">
+            <p class="perdiste">Perdiste</p>
+            <p class="hscore"id="high">MaxScore:</p>
+            <button class="btnReintentar" id="btnReintentar">Reintentar</button>
+        </div>
+    </main>
+</body>
+</html>
+<script src="game.js"></script>

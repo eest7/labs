@@ -1,0 +1,21 @@
+body {
+  background-color: #343333;
+  font-family: "8BITWONDERNominal";
+  font-weight: normal;
+  font-style: normal;
+}
+h1,
+h2 {
+  color: #343333;
+}
+.hide {
+  display: none;
+}
+.letra {
+  color: #343333;
+}
+.realizado {
+  color: #fff;
+  margin-left: 10px;
+  margin-top: 10px;
+}
